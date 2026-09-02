@@ -3,14 +3,14 @@ package model;
 public class Cliente {
     private  String nombreCliente;
     private  String telefono;
-    private  String identificador;
+    private  int idCliente;
 
     public Cliente() {
     }
 
-    public Cliente(String nombreCliente, String identificador, String telefono) {
+    public Cliente(String nombreCliente, int idCliente, String telefono) {
         this.nombreCliente = nombreCliente;
-        this.identificador = identificador;
+        this.idCliente = idCliente;
         this.telefono = telefono;
     }
 
@@ -30,12 +30,12 @@ public class Cliente {
         this.telefono = telefono;
     }
 
-    public String getIdentificador() {
-        return identificador;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     @Override
@@ -43,6 +43,6 @@ public class Cliente {
         return "Cliente:" +
                 "Nombre Cliente:" + nombreCliente +
                 "Telefono:" + telefono +
-                "Identificador:" + identificador ;
+                "Identificador:" + idCliente;
     }
 }

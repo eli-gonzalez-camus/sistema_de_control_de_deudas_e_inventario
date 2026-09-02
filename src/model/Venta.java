@@ -1,47 +1,19 @@
 package model;
 
-public class Venta {
-    private  int idCliente;
-    private  String nombre;
-    private  String producto;
+public class Venta  extends  Movimiento{
+    private Producto producto;
     private  int cantidad;
     private double subTotal;
-    private  String fecha;
+
 
     public Venta() {
     }
 
-    public Venta(int idCliente, String nombre, String producto, int cantidad, double subTotal, String fecha) {
-        this.idCliente = idCliente;
-        this.nombre = nombre;
+    public Venta(Cliente cliente, String fecha, int idMovimiento, double monto, Producto producto, int cantidad, double subTotal) {
+        super(cliente, fecha, idMovimiento, monto);
         this.producto = producto;
         this.cantidad = cantidad;
         this.subTotal = subTotal;
-        this.fecha = fecha;
-    }
-
-    public String getProducto() {
-        return producto;
-    }
-
-    public void setProducto(String producto) {
-        this.producto = producto;
-    }
-
-    public int getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public int getCantidad() {
@@ -52,6 +24,14 @@ public class Venta {
         this.cantidad = cantidad;
     }
 
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
     public double getSubTotal() {
         return subTotal;
     }
@@ -60,22 +40,11 @@ public class Venta {
         this.subTotal = subTotal;
     }
 
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
     @Override
     public String toString() {
         return "Venta" +
-                "ID Cliente:" + idCliente +
-                "Nombre:" + nombre +
-                "Producto:" + producto +
                 "Cantidad:" + cantidad +
                 "SubTotal:" + subTotal +
-                "Fecha:" + fecha ;
+                producto;
     }
 }

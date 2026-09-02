@@ -1,6 +1,6 @@
 package model;
 
-    public class Movimiento {
+    public class Movimiento  {
 
         private int idMovimiento;
         private Cliente cliente;
